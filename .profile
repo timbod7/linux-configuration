@@ -18,11 +18,7 @@ fi
 
 # set PATH
 export PATH=\
-$HOME/bin:\
-$HOME/.cabal/bin:\
-$HOME/repos-3rd-party/ghc-mod/cabal-dev/bin:\
-/usr/local/haskell-platform-2013.2.0.0/bin:\
-/usr/local/ghc-7.6.3/bin:\
+$HOME/bin:/usr/local/ghc-7.8.2/bin:\
 /usr/local/sbin:/usr/local/bin:\
 /usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 
