@@ -18,9 +18,17 @@ sudo apt-get install libcairo2.0-dev
 sudo apt-get install libpango1.0-dev
 sudo apt-get install libgtk2.0-dev
 
+# Experimentation with cairo/gtk
+sudo apt-get install libgtk-3-dev
+
+# For building adl
+sudo apt-get install libcppnetlib-dev
+
 # General utilities
 
 sudo apt-get install meld
+sudo apt-get install htop
 sudo apt-get install openssh-server
+sudo apt-get install g++
 
 

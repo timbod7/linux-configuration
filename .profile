@@ -18,7 +18,8 @@ fi
 
 # set PATH
 export PATH=\
-$HOME/bin:/usr/local/ghc-7.8.2/bin:\
+$HOME/bin:$HOME/bin-hs/.cabal-sandbox/bin:\
+/usr/local/ghc-7.8.2/bin:\
 /usr/local/sbin:/usr/local/bin:\
 /usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 
