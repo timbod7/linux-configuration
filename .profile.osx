@@ -16,8 +16,16 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
+# Add GHC 7.8.4 to the PATH, via http://ghcformacosx.github.io/
+export GHC_DOT_APP="/Applications/ghc-7.8.4.app"
+if [ -d "$GHC_DOT_APP" ]; then
+    export PATH="${PATH}"
+fi
+
 # set PATH
 export PATH=$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+
+export PKG_CONFIG_PATH=/opt/X11/lib/pkgconfig
 
 export LANGUAGE="en_AU:en"
 export LC_MESSAGES="en_AU.UTF-8"

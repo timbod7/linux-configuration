@@ -6,7 +6,6 @@ HISTCONTROL=ignoredups:ignorespace
 HISTSIZE=2000
 HISTFILESIZE=4000
 
-export EDITOR=emacsclient
 export LANG=en_US.UTF-8
 
 # ls () { /bin/ls -h --color=auto "$@"; }
