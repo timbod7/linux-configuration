@@ -23,7 +23,7 @@ if [ -d "$GHC_DOT_APP" ]; then
 fi
 
 # set PATH
-export PATH=$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 
 export PKG_CONFIG_PATH=/opt/X11/lib/pkgconfig
 
