@@ -10,7 +10,14 @@ export LANG=en_US.UTF-8
 
 # ls () { /bin/ls -h --color=auto "$@"; }
 
+gitroot () { cd $(git rev-parse --show-toplevel); }
+
+whatsmyip () { wget http://ipinfo.io/ip -qO -; }
+
 source /usr/local/etc/bash_completion.d/git-prompt.sh
 source $HOME/.bash_prompt
 
 
+# Put nvm/node on the path
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
