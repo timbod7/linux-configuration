@@ -17,6 +17,8 @@ whatsmyip () { wget http://ipinfo.io/ip -qO -; }
 source /usr/local/etc/bash_completion.d/git-prompt.sh
 source $HOME/.bash_prompt
 
+source_docker_env() { eval $(docker-machine env local); export DOCKER_IP=$(docker-machine ip local); }
+
 
 # Put nvm/node on the path
 export NVM_DIR=~/.nvm

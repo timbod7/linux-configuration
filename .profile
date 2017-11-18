@@ -27,3 +27,11 @@ export LANGUAGE="en_AU:en"
 export LC_MESSAGES="en_AU.UTF-8"
 export LC_CTYPE="en_AU.UTF-8"
 export LC_COLLATE="en_AU.UTF-8"
+
+export CLOUDSDK_PYTHON=/usr/local/bin/python2.7
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/timd/google-cloud-sdk/path.bash.inc' ]; then source '/Users/timd/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/timd/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/timd/google-cloud-sdk/completion.bash.inc'; fi
