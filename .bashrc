@@ -6,12 +6,9 @@ HISTCONTROL=ignoredups:ignorespace
 HISTSIZE=2000
 HISTFILESIZE=4000
 
-export EDITOR=emacsclient
 export LANG=en_US.UTF-8
 
 # ls () { /bin/ls -h --color=auto "$@"; }
 
-source /etc/bash_completion.d/git-prompt
+source $HOME/.nix-profile/etc/bash_completion.d/git-prompt.sh
 source $HOME/.bash_prompt
-
-

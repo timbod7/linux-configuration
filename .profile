@@ -18,10 +18,12 @@ fi
 
 # set PATH
 export PATH=\
-$HOME/bin:$HOME/bin-hs/.cabal-sandbox/bin:\
-/usr/local/ghc-7.8.2/bin:\
+$HOME/bin:\
 /usr/local/sbin:/usr/local/bin:\
 /usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+
+# And overlay nix
+source  $HOME/.nix-profile/etc/profile.d/nix.sh
 
 export LANGUAGE="en_AU:en"
 export LC_MESSAGES="en_AU.UTF-8"
