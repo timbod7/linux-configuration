@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=nix-shell-default
+Icon=utilities-terminal
+Exec=bash -c '$HOME/personal/repos/linux-configuration/applications/nix-shell-default.sh'
+Comment=Terminal with standard dev tools
+Categories=Tools
+Terminal=true
