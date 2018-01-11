@@ -1,6 +1,7 @@
 # This commit corresponds to the nixpkgs-unstable channel at 2018-01-08
 let
   pkgs = import (fetchTarball https://github.com/NixOS/nixpkgs/tarball/310ad4345bbe42ae7360981243f6602a03fd232f) {};
+  plpdart = (import ./packages/plpdart.nix) {stdenv=pkgs.stdenv;fetchurl=pkgs.fetchurl; unzip=pkgs.unzip;};
 in with pkgs; {
   simpleEnv = stdenv.mkDerivation {
     name = "simple-env";
@@ -15,6 +16,7 @@ in with pkgs; {
       gcc
       git
       gmp
+      kakoune
       htop
       jsonnet
       kubernetes
@@ -23,6 +25,7 @@ in with pkgs; {
       postgresql
       stack
       yarn
+      plpdart
     ];
   };
 }
