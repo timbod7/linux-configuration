@@ -1,7 +1,7 @@
 # This commit corresponds to the nixpkgs-unstable channel at 2018-01-08
 let
   pkgs = import (fetchTarball https://github.com/NixOS/nixpkgs/tarball/310ad4345bbe42ae7360981243f6602a03fd232f) {};
-  terraform = (import ./packages/terraform.nix) {stdenv=pkgs.stdenv;lib=pkgs.lib;buildEnv=pkgs.buildEnv;buildGoPackage=pkgs.buildGoPackage;fetchpatch=pkgs.fetchpatch;fetchFromGitHub=pkgs.fetchFromGitHub;makeWrapper=pkgs.makeWrapper;};
+  plpdart = (import ./packages/plpdart.nix) {stdenv=pkgs.stdenv;fetchurl=pkgs.fetchurl; unzip=pkgs.unzip;};
 in with pkgs; {
   simpleEnv = stdenv.mkDerivation {
     name = "simple-env";
@@ -12,20 +12,17 @@ in with pkgs; {
       bazel
       binutils
       docker
+      docker_compose
       doit
       gcc
       git
       gmp
-      kakoune
-      htop
-      jsonnet
-      kubernetes
       nix
       nodejs
-      pkgconfig
+      plpdart
       postgresql
       stack
-      terraform.terraform_0_9_2
+      tup
       yarn
     ];
   };

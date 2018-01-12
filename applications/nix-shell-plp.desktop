@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=nix-shell-plp
+Icon=utilities-terminal
+Exec=bash -c '$HOME/personal/repos/linux-configuration/applications/nix-shell-plp.sh'
+Comment=Terminal with dev tools for plp
+Categories=Tools
+Terminal=true
