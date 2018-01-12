@@ -1,7 +1,9 @@
 # This commit corresponds to the nixpkgs-unstable channel at 2018-01-08
 let
   pkgs = import (fetchTarball https://github.com/NixOS/nixpkgs/tarball/310ad4345bbe42ae7360981243f6602a03fd232f) {};
-  plpdart = (import ./packages/plpdart.nix) {stdenv=pkgs.stdenv;fetchurl=pkgs.fetchurl; unzip=pkgs.unzip;};
+  dart_1_23 = (import ./packages/dart_1_23.nix) {
+    inherit (pkgs) stdenv fetchurl unzip;
+  };
 in with pkgs; {
   simpleEnv = stdenv.mkDerivation {
     name = "simple-env";
@@ -19,7 +21,7 @@ in with pkgs; {
       gmp
       nix
       nodejs
-      plpdart
+      dart_1_23
       postgresql
       stack
       tup

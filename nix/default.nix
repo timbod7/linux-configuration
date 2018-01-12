@@ -1,7 +1,9 @@
 # This commit corresponds to the nixpkgs-unstable channel at 2018-01-08
 let
   pkgs = import (fetchTarball https://github.com/NixOS/nixpkgs/tarball/310ad4345bbe42ae7360981243f6602a03fd232f) {};
-  terraform = (import ./packages/terraform.nix) {stdenv=pkgs.stdenv;lib=pkgs.lib;buildEnv=pkgs.buildEnv;buildGoPackage=pkgs.buildGoPackage;fetchpatch=pkgs.fetchpatch;fetchFromGitHub=pkgs.fetchFromGitHub;makeWrapper=pkgs.makeWrapper;};
+  terraform = (import ./packages/terraform.nix) {
+    inherit (pkgs) stdenv lib buildEnv buildGoPackage fetchpatch fetchFromGitHub makeWrapper;
+  };
 in with pkgs; {
   simpleEnv = stdenv.mkDerivation {
     name = "simple-env";
