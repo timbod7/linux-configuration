@@ -24,6 +24,7 @@ $HOME/bin:\
 
 # And overlay nix
 source  $HOME/.nix-profile/etc/profile.d/nix.sh
+export NIX_PATH=$HOME/.nix-defexpr/channels/
 
 export LANGUAGE="en_AU:en"
 export LC_MESSAGES="en_AU.UTF-8"
