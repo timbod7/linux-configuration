@@ -1,9 +1,9 @@
 let
-  pkgs = import <nixos1709> {};
+  pkgs = import <nixos1803> {};
   terraform = (import ./packages/terraform.nix) {
     inherit (pkgs) stdenv lib buildEnv buildGoPackage fetchpatch fetchFromGitHub makeWrapper;
   };
-  bazel_0_8_1 = (import ./packages/bazel.nix) {
+  bazel_0_11_1 = (import ./packages/bazel.nix) {
     inherit (pkgs) stdenv lib fetchurl jdk zip unzip bash writeScriptBin coreutils makeWrapper which python;
   };
 in with pkgs; {
@@ -13,18 +13,22 @@ in with pkgs; {
     buildInputs = [
       arcanist
       awscli
-      bazel_0_8_1
+      bazel_0_11_1
       binutils
       docker
+      docker_compose
       doit
       gcc
       git
+      git-lfs
       gmp
+      gradle
       kakoune
       htop
       jsonnet
       kubernetes
       nix
+      glibcLocales
       nodejs
       pkgconfig
       postgresql
