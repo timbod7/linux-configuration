@@ -8,6 +8,8 @@ HISTFILESIZE=4000
 
 export LANG=en_US.UTF-8
 
+shopt -s checkwinsize
+
 # ls () { /bin/ls -h --color=auto "$@"; }
 
 # relies on `nix-env -i git` having been run

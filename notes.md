@@ -13,3 +13,18 @@ then add the one required, giving it a nix expression friendly name:
 nix-channel --add  https://nixos.org/channels/nixos-18.03 nixos1803
 nix-channel --update
 ```
+
+
+# Increasing the number of inotify watches
+
+add to `/etc/sysctl.conf`:
+
+```
+fs.inotify.max_user_watches=65536
+```
+
+and run
+
+```
+sudo sysctl -p
+```

@@ -29,7 +29,7 @@ in with pkgs; {
       kubernetes
       nix
       glibcLocales
-      nodejs
+      nodejs-8_x
       pkgconfig
       postgresql
       stack
