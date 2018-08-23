@@ -28,3 +28,20 @@ and run
 ```
 sudo sysctl -p
 ```
+
+# Managing wifi from the CLI
+
+`ifconfig` is deprecated. Replaced with `ip`
+
+Show links (aka interfaces), and bring up wifi:
+
+```
+ip link
+sudo ip link set wlp2s0 up
+```
+
+Scan access points:
+
+```
+sudo iwlist wlp2s0 scan
+```

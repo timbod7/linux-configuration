@@ -21,17 +21,18 @@ in with pkgs; {
       gcc
       git
       git-lfs
+      glibcLocales
       gmp
       gradle
-      kakoune
       htop
       jsonnet
+      kakoune
       kubernetes
       nix
-      glibcLocales
       nodejs-8_x
       pkgconfig
       postgresql
+      pandoc
       stack
       terraform.terraform_0_9_2
       yarn
