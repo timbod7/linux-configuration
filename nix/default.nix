@@ -6,6 +6,9 @@ let
   bazel_0_11_1 = (import ./packages/bazel.nix) {
     inherit (pkgs) stdenv lib fetchurl jdk zip unzip bash writeScriptBin coreutils makeWrapper which python;
   };
+  doit = (import ./packages/doit.nix) {
+    inherit (pkgs) stdenv fetchurl python3Packages;
+  };
 in with pkgs; {
   simpleEnv = stdenv.mkDerivation {
     name = "simple-env";
@@ -28,11 +31,13 @@ in with pkgs; {
       jsonnet
       kakoune
       kubernetes
+      kubernetes-helm
       nix
       nodejs-8_x
       pkgconfig
       postgresql
       pandoc
+      rustup
       stack
       terraform.terraform_0_9_2
       yarn
