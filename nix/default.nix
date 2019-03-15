@@ -29,6 +29,7 @@ in with pkgs; {
       gradle
       htop
       jsonnet
+      jq
       kakoune
       kubernetes
       kubernetes-helm
@@ -40,6 +41,8 @@ in with pkgs; {
       rustup
       stack
       terraform.terraform_0_9_2
+      tup
+      tmux
       yarn
     ];
   };
