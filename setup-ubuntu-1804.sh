@@ -23,3 +23,18 @@ apt-get update && apt-get install yarn
 curl -sf -L https://static.rust-lang.org/rustup.sh | sh
 rustup install stable
 rustup default stable-x86_64-unknown-linux-gnu
+
+
+# Install haskell tooling
+curl -sSL https://get.haskellstack.org/ | sh
+
+# Install dev libs for haskell chart builds
+apt-get install libglib2.0-dev libcairo2-dev libpango1.0-dev libgtk-3-dev libgtk2.0-dev
+
+# Install dev libs for hx-deploy-tool
+apt-get install libbz2-dev
+
+# Install helix java tooling
+wget https://github.com/bazelbuild/bazel/releases/download/0.11.1/bazel-0.11.1-installer-linux-x86_64.sh -O /tmp/bazel-installer.sh
+chmod +x /tmp/bazel-installer.sh
+/tmp/bazel-installer.sh
