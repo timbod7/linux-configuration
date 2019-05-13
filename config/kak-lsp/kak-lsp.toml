@@ -3,3 +3,8 @@ filetypes = ["typescript"]
 roots = ["package.json"]
 command = "typescript-language-server"
 args = ["--stdio"]
+
+[language.rust]
+filetypes = ["rust"]
+roots = ["Cargo.toml"]
+command = "rls"

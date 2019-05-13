@@ -38,3 +38,7 @@ apt-get install libbz2-dev
 wget https://github.com/bazelbuild/bazel/releases/download/0.11.1/bazel-0.11.1-installer-linux-x86_64.sh -O /tmp/bazel-installer.sh
 chmod +x /tmp/bazel-installer.sh
 /tmp/bazel-installer.sh
+
+# Install typescript language servers
+npm install -g typescript
+npm install -g typescript-language-server
