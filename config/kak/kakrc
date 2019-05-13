@@ -21,8 +21,19 @@ hook global InsertChar \t %{ exec -draft -itersel h@ }
 set global tabstop 2
 set global indentwidth 2  
 
+# Cut/Copyfrom system clipboard
+hook global NormalKey y|d|c %{ nop %sh{
+  printf %s "$kak_main_reg_dquote" | xsel --input --clipboard
+  }}
+
 # Keys in the user keymap (triggered by ,)
 map global user / ':tmux-terminal-horizontal kak -c %val{session}<ret>' -docstring 'Split horizontal'
 map global user = ':tmux-terminal-vertical kak -c %val{session}<ret>' -docstring 'Split vertical'
 map global user l ':enter-user-mode lsp<ret>' -docstring 'LSP mode'
-map global user f ': fzf-mode<ret>'
+map global user f ': fzf-mode<ret>' -docstring 'Fuzzy mode'
+map global user p '<a-!>xsel --output --clipboard<ret>' -docstring 'Paste from clipboard (after selection)'
+map global user P '!xsel --output --clipboard<ret>' -docstring 'Paste from clipboard (before selection)'
+map global user n ':lsp-find-error<ret>' -docstring 'next error'
+
+
+
