@@ -30,6 +30,9 @@ export NIX_PATH=$HOME/.nix-defexpr/channels/
 source $HOME/.nix-profile/etc/bash_completion.d/git-prompt.sh
 source $HOME/.bash_prompt
 
+# Use kakoune as the default editor
+export EDITOR=kak
+
 export LANGUAGE="en_AU:en"
 export LC_MESSAGES="en_AU.UTF-8"
 export LC_CTYPE="en_AU.UTF-8"

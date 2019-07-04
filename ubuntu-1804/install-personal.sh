@@ -11,3 +11,8 @@ ln -s $HOME/.cargo/bin/kak-lsp $HOME/bin/kak-lsp
 
 # Setup rust lsp
 rustup component add rls-preview rust-analysis rust-src
+
+# Rust CLI utils
+cargo install cargo-edit
+cargo install cargo-generate
+

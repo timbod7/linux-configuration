@@ -12,6 +12,7 @@ plug "ul/kak-lsp" do %{
 }
 lsp-enable
 lsp-auto-hover-enable
+lsp-auto-hover-insert-mode-disable
 
 # Disable the clippy picture
 set global ui_options ncurses_assistant=none
@@ -27,13 +28,22 @@ hook global NormalKey y|d|c %{ nop %sh{
   }}
 
 # Keys in the user keymap (triggered by ,)
-map global user / ':tmux-terminal-horizontal kak -c %val{session}<ret>' -docstring 'Split horizontal'
-map global user = ':tmux-terminal-vertical kak -c %val{session}<ret>' -docstring 'Split vertical'
-map global user l ':enter-user-mode lsp<ret>' -docstring 'LSP mode'
+map global user / ': tmux-terminal-horizontal kak -c %val{session} -e "buffer %val{bufname}"<ret>' -docstring 'Split horizontal'
+map global user = ': tmux-terminal-vertical kak -c %val{session} -e "buffer %val{bufname}"<ret>' -docstring 'Split vertical'
+map global user l ': enter-user-mode lsp<ret>' -docstring 'LSP mode'
 map global user f ': fzf-mode<ret>' -docstring 'Fuzzy mode'
 map global user p '<a-!>xsel --output --clipboard<ret>' -docstring 'Paste from clipboard (after selection)'
 map global user P '!xsel --output --clipboard<ret>' -docstring 'Paste from clipboard (before selection)'
-map global user n ':lsp-find-error<ret>' -docstring 'next error'
+map global user w ': add-highlighter global/wrap wrap<ret>' -docstring 'enable wrapping'
+map global user W ': remove-highlighter global/wrap<ret>' -docstring 'disable wrapping'
+map global user r ': lsp-rename-prompt<ret>' -docstring 'rename symbol'
 
+# Keys in the goto keymap (triggered by g)
+map global goto n '<esc>: lsp-find-error<ret>' -docstring 'next error'
+map global goto p '<esc>: lsp-find-error --previous<ret>' -docstring 'previous error'
+
+# Make searches case insensitive by default by adding a flag
+# to the regex
+map global normal / '/(?i)'  
 
 
