@@ -10,6 +10,11 @@ export LANG=en_US.UTF-8
 
 shopt -s checkwinsize
 
+# Enable completion
+if [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+fi
+
 # ls () { /bin/ls -h --color=auto "$@"; }
 
 # relies on `nix-env -i git` having been run

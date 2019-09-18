@@ -9,7 +9,7 @@ apt-get install -y python3-doit python3-pip
 pip3 install pystache
 
 # And other command line tools
-apt-get install meld tmux jq awscli arcanist htop
+apt-get install meld tmux jq awscli arcanist htop postgresql-client
 
 # Install dependencies for kak
 apt-get install libncursesw5-dev
@@ -37,7 +37,10 @@ apt-get install libbz2-dev
 # Install helix java tooling
 wget https://github.com/bazelbuild/bazel/releases/download/0.11.1/bazel-0.11.1-installer-linux-x86_64.sh -O /tmp/bazel-installer.sh
 chmod +x /tmp/bazel-installer.sh
-/tmp/bazel-installer.sh
+/tmp/bazel-installer.sh --prefix=/opt/bazel/0.11
+wget https://github.com/bazelbuild/bazel/releases/download/0.28.1/bazel-0.28.1-installer-linux-x86_64.sh -O /tmp/bazel-installer.sh
+chmod +x /tmp/bazel-installer.sh
+/tmp/bazel-installer.sh --prefix=/opt/bazel/0.28
 
 # Install typescript language servers
 npm install -g typescript

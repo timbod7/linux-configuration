@@ -19,15 +19,12 @@ fi
 # set PATH
 export PATH=\
 $HOME/bin:\
+$HOME/.local/bin:\
+$HOME/.cargo/bin:\
+/opt/bazel/0.11/bin:\
 /usr/local/sbin:/usr/local/bin:\
 /usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 
-# And overlay nix
-source  $HOME/.nix-profile/etc/profile.d/nix.sh
-export NIX_PATH=$HOME/.nix-defexpr/channels/
-
-# relies on `nix-env -i git` having been run
-source $HOME/.nix-profile/etc/bash_completion.d/git-prompt.sh
 source $HOME/.bash_prompt
 
 # Use kakoune as the default editor
@@ -37,5 +34,3 @@ export LANGUAGE="en_AU:en"
 export LC_MESSAGES="en_AU.UTF-8"
 export LC_CTYPE="en_AU.UTF-8"
 export LC_COLLATE="en_AU.UTF-8"
-
-export PATH="$HOME/.cargo/bin:$PATH"

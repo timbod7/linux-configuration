@@ -1,6 +1,6 @@
-[language.typescript]
+[language.tsx]
 filetypes = ["typescript"]
-roots = ["package.json"]
+roots = ["package.json", "tsconfig.json"]
 command = "typescript-language-server"
 args = ["--stdio"]
 

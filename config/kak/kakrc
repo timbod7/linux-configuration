@@ -1,16 +1,18 @@
 # Enable the plugin manager
 source "%val{config}/plugins/plug.kak/rc/plug.kak"
 
+require-module tmux
+
 # Configuration for the fzf fuzzy finding tool
 plug "andreyorst/fzf.kak"
 set global fzf_git_command "git ls-files --recurse-submodules"
 
 # Configure the lsp server
-plug "ul/kak-lsp" do %{
-    cargo build --release --locked
-    cargo install --force
+eval %sh{kak-lsp --kakoune -s $kak_session}
+
+hook global WinSetOption filetype=(rust|typescript) %{
+    lsp-enable-window
 }
-lsp-enable
 lsp-auto-hover-enable
 lsp-auto-hover-insert-mode-disable
 
@@ -34,6 +36,7 @@ map global user l ': enter-user-mode lsp<ret>' -docstring 'LSP mode'
 map global user f ': fzf-mode<ret>' -docstring 'Fuzzy mode'
 map global user p '<a-!>xsel --output --clipboard<ret>' -docstring 'Paste from clipboard (after selection)'
 map global user P '!xsel --output --clipboard<ret>' -docstring 'Paste from clipboard (before selection)'
+map global user R '<a-d>!xsel --output --clipboard<ret>' -docstring 'Paste from clipboard (replace selection)'
 map global user w ': add-highlighter global/wrap wrap<ret>' -docstring 'enable wrapping'
 map global user W ': remove-highlighter global/wrap<ret>' -docstring 'disable wrapping'
 map global user r ': lsp-rename-prompt<ret>' -docstring 'rename symbol'
