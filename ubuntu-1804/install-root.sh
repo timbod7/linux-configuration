@@ -25,6 +25,14 @@ rustup install stable
 rustup default stable-x86_64-unknown-linux-gnu
 
 
+# Install dart, sass for plp builds
+wget https://storage.googleapis.com/dart-archive/channels/stable/release/1.24.3/sdk/dartsdk-linux-x64-release.zip -O /tmp/dartsdk-linux-x64-release.zip
+mkdir -p /opt
+unzip /tmp/dartsdk-linux-x64-release.zip -d /opt
+chmod -R a+rX /opt/dart-sdk/
+apt-get install ruby-full build-essential rubygems
+gem install sass
+
 # Install haskell tooling
 curl -sSL https://get.haskellstack.org/ | sh
 

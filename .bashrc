@@ -20,3 +20,7 @@ fi
 # relies on `nix-env -i git` having been run
 source $HOME/.nix-profile/etc/bash_completion.d/git-prompt.sh
 source $HOME/.bash_prompt
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/timd/.sdkman"
+[[ -s "/home/timd/.sdkman/bin/sdkman-init.sh" ]] && source "/home/timd/.sdkman/bin/sdkman-init.sh"

@@ -22,6 +22,7 @@ $HOME/bin:\
 $HOME/.local/bin:\
 $HOME/.cargo/bin:\
 /opt/bazel/0.11/bin:\
+/opt/dart-sdk/bin:\
 /usr/local/sbin:/usr/local/bin:\
 /usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 

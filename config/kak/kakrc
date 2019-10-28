@@ -3,6 +3,9 @@ source "%val{config}/plugins/plug.kak/rc/plug.kak"
 
 require-module tmux
 
+# Use git grep
+set global grepcmd "git grep -n"
+
 # Configuration for the fzf fuzzy finding tool
 plug "andreyorst/fzf.kak"
 set global fzf_git_command "git ls-files --recurse-submodules"
