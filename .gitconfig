@@ -39,3 +39,5 @@
 	cookiefile = /Users/timd/.gitcookies
 [credential]
 	helper = cache
+[merge]
+	conflictstyle = diff3

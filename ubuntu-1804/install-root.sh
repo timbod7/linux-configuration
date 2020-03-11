@@ -15,9 +15,10 @@ apt-get install meld tmux jq awscli arcanist htop postgresql-client
 apt-get install libncursesw5-dev
 
 # Install yarn, node, etc
+curl -sL https://deb.nodesource.com/setup_10.x | bash -
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-apt-get update && apt-get install yarn
+apt-get update && apt-get install nodejs yarn
 
 # Install rustup and stable toolchain
 curl -sf -L https://static.rust-lang.org/rustup.sh | sh
@@ -43,12 +44,22 @@ apt-get install libglib2.0-dev libcairo2-dev libpango1.0-dev libgtk-3-dev libgtk
 apt-get install libbz2-dev
 
 # Install helix java tooling
-wget https://github.com/bazelbuild/bazel/releases/download/0.11.1/bazel-0.11.1-installer-linux-x86_64.sh -O /tmp/bazel-installer.sh
+# wget https://github.com/bazelbuild/bazel/releases/download/0.11.1/bazel-0.11.1-installer-linux-x86_64.sh -O /tmp/bazel-installer.sh
+# chmod +x /tmp/bazel-installer.sh
+# /tmp/bazel-installer.sh --prefix=/opt/bazel/0.11
+wget https://github.com/bazelbuild/bazel/releases/download/0.16.1/bazel-0.16.1-installer-linux-x86_64.sh -O /tmp/bazel-installer.sh
 chmod +x /tmp/bazel-installer.sh
-/tmp/bazel-installer.sh --prefix=/opt/bazel/0.11
+/tmp/bazel-installer.sh --prefix=/opt/bazel/0.16
 wget https://github.com/bazelbuild/bazel/releases/download/0.28.1/bazel-0.28.1-installer-linux-x86_64.sh -O /tmp/bazel-installer.sh
 chmod +x /tmp/bazel-installer.sh
 /tmp/bazel-installer.sh --prefix=/opt/bazel/0.28
+wget https://github.com/bazelbuild/bazel/releases/download/2.1.1/bazel-2.1.1-installer-linux-x86_64.sh -O /tmp/bazel-installer.sh
+chmod +x /tmp/bazel-installer.sh
+/tmp/bazel-installer.sh --prefix=/opt/bazel/2.1
+
+# Install intellij
+wget https://download.jetbrains.com/idea/ideaIC-2019.3.3.tar.gz -o /tmp/ideaIC-2019.3.3.tar.gz
+(cd /opt; tar -xzf /tmp/ideaIC-2019.3.3.tar.gz)
 
 # Install typescript language servers
 npm install -g typescript

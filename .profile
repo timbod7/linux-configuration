@@ -21,12 +21,13 @@ export PATH=\
 $HOME/bin:\
 $HOME/.local/bin:\
 $HOME/.cargo/bin:\
-/opt/bazel/0.11/bin:\
+/opt/bazel/2.1/bin:\
 /opt/dart-sdk/bin:\
 /usr/local/sbin:/usr/local/bin:\
 /usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 
 source $HOME/.bash_prompt
+source "/home/timd/.sdkman/bin/sdkman-init.sh"
 
 # Use kakoune as the default editor
 export EDITOR=kak
