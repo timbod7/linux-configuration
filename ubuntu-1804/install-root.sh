@@ -2,7 +2,12 @@
 apt-get update
 apt-get install -y software-properties-common
 apt-get update
-apt-get install -y gcc g++ libc-dev wget pkg-config less git git-lfs libfuse-dev fuse zip
+apt-get install -y gcc g++ libc-dev wget pkg-config less libfuse-dev fuse zip
+
+# Recent git
+add-apt-repository ppa:git-core/ppa
+apt-get update
+apt-get install git git-lfs
 
 # The doit command line build tool
 apt-get install -y python3-doit python3-pip
