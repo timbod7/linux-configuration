@@ -1,8 +1,8 @@
 # Install standard dev tools
-apt-get update
+pt-get update
 apt-get install -y software-properties-common
 apt-get update
-apt-get install -y gcc g++ libc-dev wget pkg-config less libfuse-dev fuse zip
+apt-get install -y gcc g++ libc-dev wget pkg-config less libfuse-dev fuse zip curl tup
 
 # Recent git
 add-apt-repository ppa:git-core/ppa
@@ -23,12 +23,18 @@ apt-get install libncursesw5-dev
 curl -sL https://deb.nodesource.com/setup_10.x | bash -
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-apt-get update && apt-get install nodejs yarn
+apt-get update && apt-get install nodejs yarn npm
 
-# Install rustup and stable toolchain
-curl -sf -L https://static.rust-lang.org/rustup.sh | sh
-rustup install stable
-rustup default stable-x86_64-unknown-linux-gnu
+# Install docker
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+      bionic \
+      stable"
+apt-get update
+apt-get install docker-ce docker-ce-cli containerd.io
+curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
 
 
 # Install dart, sass for plp builds
@@ -49,25 +55,14 @@ apt-get install libglib2.0-dev libcairo2-dev libpango1.0-dev libgtk-3-dev libgtk
 apt-get install libbz2-dev
 
 # Install helix java tooling
-# wget https://github.com/bazelbuild/bazel/releases/download/0.11.1/bazel-0.11.1-installer-linux-x86_64.sh -O /tmp/bazel-installer.sh
-# chmod +x /tmp/bazel-installer.sh
-# /tmp/bazel-installer.sh --prefix=/opt/bazel/0.11
-wget https://github.com/bazelbuild/bazel/releases/download/0.16.1/bazel-0.16.1-installer-linux-x86_64.sh -O /tmp/bazel-installer.sh
-chmod +x /tmp/bazel-installer.sh
-/tmp/bazel-installer.sh --prefix=/opt/bazel/0.16
-wget https://github.com/bazelbuild/bazel/releases/download/0.28.1/bazel-0.28.1-installer-linux-x86_64.sh -O /tmp/bazel-installer.sh
-chmod +x /tmp/bazel-installer.sh
-/tmp/bazel-installer.sh --prefix=/opt/bazel/0.28
 wget https://github.com/bazelbuild/bazel/releases/download/2.1.1/bazel-2.1.1-installer-linux-x86_64.sh -O /tmp/bazel-installer.sh
 chmod +x /tmp/bazel-installer.sh
 /tmp/bazel-installer.sh --prefix=/opt/bazel/2.1
 
 # Install intellij
-wget https://download.jetbrains.com/idea/ideaIC-2019.3.3.tar.gz -o /tmp/ideaIC-2019.3.3.tar.gz
+(cd /tmp; wget https://download.jetbrains.com/idea/ideaIC-2019.3.3.tar.gz)
 (cd /opt; tar -xzf /tmp/ideaIC-2019.3.3.tar.gz)
 
-# Install necktos/act
-curl https://raw.githubusercontent.com/nektos/act/master/install.sh | bash
 
 # Install typescript language servers
 npm install -g typescript
