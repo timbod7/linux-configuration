@@ -13,7 +13,7 @@ curl -sf -L https://static.rust-lang.org/rustup.sh | sh
 source $HOME/.cargo/env
 rustup install stable
 rustup default stable-x86_64-unknown-linux-gnu
-
+curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh 
 
 # Setup kakoune
 (cd $repos_3rd_party; git clone git@github.com:mawww/kakoune.git)

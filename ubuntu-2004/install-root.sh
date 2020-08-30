@@ -17,7 +17,7 @@ pip3 install pystache
 apt-get install meld tmux jq awscli arcanist htop postgresql-client
 
 # Install dependencies for kak
-apt-get install libncursesw5-dev
+apt-get install libncursesw5-dev fzf
 
 # Install yarn, node, etc
 curl -sL https://deb.nodesource.com/setup_10.x | bash -
@@ -55,6 +55,9 @@ apt-get install libglib2.0-dev libcairo2-dev libpango1.0-dev libgtk-3-dev libgtk
 apt-get install libbz2-dev
 
 # Install helix java tooling
+wget https://github.com/bazelbuild/bazel/releases/download/0.16.1/bazel-0.16.1-installer-linux-x86_64.sh -O /tmp/bazel-installer.sh
+chmod +x /tmp/bazel-installer.sh
+/tmp/bazel-installer.sh --prefix=/opt/bazel/0.16
 wget https://github.com/bazelbuild/bazel/releases/download/2.1.1/bazel-2.1.1-installer-linux-x86_64.sh -O /tmp/bazel-installer.sh
 chmod +x /tmp/bazel-installer.sh
 /tmp/bazel-installer.sh --prefix=/opt/bazel/2.1

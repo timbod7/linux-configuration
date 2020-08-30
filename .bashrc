@@ -22,3 +22,5 @@ source $HOME/.bash_prompt
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/timd/.sdkman"
 [[ -s "/home/timd/.sdkman/bin/sdkman-init.sh" ]] && source "/home/timd/.sdkman/bin/sdkman-init.sh"
+
+source /home/timd/.config/broot/launcher/bash/br
