@@ -38,7 +38,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 
 # Install dart, sass for plp builds
-wget https://storage.googleapis.com/dart-archive/channels/stable/release/1.24.3/sdk/dartsdk-linux-x64-release.zip -O /tmp/dartsdk-linux-x64-release.zip
+wget https://stage.googleapis.com/dart-archive/channels/stable/release/1.24.3/sdk/dartsdk-linux-x64-release.zip -O /tmp/dartsdk-linux-x64-release.zip
 mkdir -p /opt
 unzip /tmp/dartsdk-linux-x64-release.zip -d /opt
 chmod -R a+rX /opt/dart-sdk/
@@ -70,3 +70,9 @@ chmod +x /tmp/bazel-installer.sh
 # Install typescript language servers
 npm install -g typescript
 npm install -g typescript-language-server
+
+# Install vscode
+wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | apt-key add -
+add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+apt install code
+
