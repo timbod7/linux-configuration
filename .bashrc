@@ -23,4 +23,6 @@ source $HOME/.bash_prompt
 export SDKMAN_DIR="/home/timd/.sdkman"
 [[ -s "/home/timd/.sdkman/bin/sdkman-init.sh" ]] && source "/home/timd/.sdkman/bin/sdkman-init.sh"
 
+export ANDROID_HOME=$HOME/android/29
+
 source /home/timd/.config/broot/launcher/bash/br

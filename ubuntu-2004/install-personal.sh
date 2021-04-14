@@ -26,6 +26,17 @@ ln -s $HOME/.cargo/bin/kak-lsp $HOME/bin/kak-lsp
 # Setup rust lsp
 rustup component add rls-preview rust-analysis rust-src
 
+# Install android sdk 29
+wget https://dl.google.com/android/repository/commandlinetools-linux-6609375_latest.zip -O /tmp/android-tools-installer.zip
+mkdir -p $HOME/android/29/cmdline-tools
+export ANDROID_HOME=$HOME/android/29
+unzip /tmp/android-tools-installer.zip -d $ANDROID_HOME/cmdline-tools
+$ANDROID_HOME/cmdline-tools/tools/bin/sdkmanager "build-tools;29.0.3"
+$ANDROID_HOME/cmdline-tools/tools/bin/sdkmanager "platforms;android-29"
+
+# Install deno
+curl -fsSL https://deno.land/x/install/install.sh | sh
+
 # Rust CLI utils
 cargo install cargo-edit
 cargo install cargo-generate

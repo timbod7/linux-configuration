@@ -16,11 +16,15 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
+export DENO_INSTALL=/home/timd/.deno
+
 # set PATH
 export PATH=\
 $HOME/bin:\
 $HOME/.local/bin:\
 $HOME/.cargo/bin:\
+$DENO_INSTALL/bin:\
+$ANDROID_HOME/cmdline-tools/tools/bin:\
 /opt/bazel/2.1/bin:\
 /opt/dart-sdk/bin:\
 /usr/local/sbin:/usr/local/bin:\
