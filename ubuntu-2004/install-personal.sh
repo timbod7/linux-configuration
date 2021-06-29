@@ -37,6 +37,9 @@ $ANDROID_HOME/cmdline-tools/tools/bin/sdkmanager "platforms;android-29"
 # Install deno
 curl -fsSL https://deno.land/x/install/install.sh | sh
 
+# Install nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+
 # Rust CLI utils
 cargo install cargo-edit
 cargo install cargo-generate
