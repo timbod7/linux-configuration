@@ -40,6 +40,11 @@ curl -fsSL https://deno.land/x/install/install.sh | sh
 # Install nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 
+# Install bazelisk
+wget -q https://github.com/bazelbuild/bazelisk/releases/download/v1.9.0/bazelisk-linux-amd64 -O /tmp/bazelisk-linux-amd64
+chmod +x /tmp/bazelisk-linux-amd64
+mv /tmp/bazelisk-linux-amd64 $HOME/bin/bazelisk
+
 # Rust CLI utils
 cargo install cargo-edit
 cargo install cargo-generate
